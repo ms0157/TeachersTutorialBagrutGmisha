@@ -99,9 +99,10 @@
                 <button class="tab-button" data-tab="skills">מיומנויות הבגרות הגמישה</button>
                 <button class="tab-button" data-tab="digital-system">המערכת הדיגיטלית: התחברות מהירה</button>
                 <button class="tab-button" data-tab="create-task">יצירת משימה חדשה</button>
+                <button class="tab-button" data-tab="teaching-tools">כלי הוראה ✨</button> <!-- New Teaching Tools Tab -->
                 <button class="tab-button" data-tab="review-submit">בדיקה, הערכה והגשה</button>
                 <button class="tab-button" data-tab="update-reset">עדכון ואיפוס</button>
-                <button class="tab-button" data-tab="help">קבלת עזרה</button> <!-- New Help Tab Button -->
+                <button class="tab-button" data-tab="help">קבלת עזרה</button>
             </div>
 
             <!-- Tab Contents -->
@@ -157,6 +158,46 @@
                         <li><strong>הגדרת המשימה:</strong> בחרו תת-נושא מתוכנית הלימודים ותנו לעבודה שם. תוכן המשימה נקבע על ידי המורה. לאחר מכן, לחצו "המשך".</li>
                         <li><strong>קביעת לוחות זמנים:</strong> הגדירו את תאריכי היעד לכל שלב במשימה. לאחר מכן, לחצו "סיים".</li>
                     </ol>
+
+                    <hr class="my-6 border-gray-300">
+
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">✨ יצירת רעיונות למשימות בעזרת Gemini ✨</h3>
+                    <p class="mb-4">הזינו מקצוע ותת-נושא (לדוגמה: "היסטוריה, מלחמת העולם השנייה") וקבלו רעיונות למשימות מתוקשבות.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                        <input type="text" id="subjectInput" placeholder="הזינו מקצוע (לדוגמה: היסטוריה)" class="flex-grow p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-right" dir="rtl">
+                        <input type="text" id="topicInput" placeholder="הזינו תת-נושא (לדוגמה: מלחמת העולם השנייה)" class="flex-grow p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-right" dir="rtl">
+                        <button id="generateIdeasBtn" class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out shadow-md flex-shrink-0">
+                            צור רעיונות ✨
+                        </button>
+                    </div>
+                    <div id="ideaOutput" class="mt-4 p-4 bg-gray-50 rounded-md border border-gray-200 min-h-[100px] text-gray-700 whitespace-pre-wrap">
+                        <!-- Generated ideas will appear here -->
+                    </div>
+                </div>
+
+                <!-- כלי הוראה -->
+                <div id="teaching-tools" class="tab-content">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-4">כלי הוראה ✨</h2>
+                    <p class="mb-4">כאן תוכלו להשתמש בכלי עזר מבוססי בינה מלאכותית לתכנון שיעורים ופעילויות.</p>
+
+                    <hr class="my-6 border-gray-300">
+
+                    <h3 class="text-lg sm:text-xl font-semibold mb-3">✨ יצירת שאלות למבחן/תרגול בעזרת Gemini ✨</h3>
+                    <p class="mb-4">הזינו נושא או טקסט וקבלו שאלות מסוגים שונים.</p>
+                    <div class="flex flex-col gap-4 mb-4">
+                        <input type="text" id="quizTopicInput" placeholder="הזינו נושא לשאלות (לדוגמה: מלחמת העולם הראשונה)" class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-right" dir="rtl">
+                        <select id="questionTypeSelect" class="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-right" dir="rtl">
+                            <option value="multiple-choice">שאלות רב-ברירה</option>
+                            <option value="open-ended">שאלות פתוחות</option>
+                            <option value="true-false">שאלות נכון/לא נכון</option>
+                        </select>
+                        <button id="generateQuizBtn" class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out shadow-md">
+                            צור שאלות ✨
+                        </button>
+                    </div>
+                    <div id="quizOutput" class="mt-4 p-4 bg-gray-50 rounded-md border border-gray-200 min-h-[100px] text-gray-700 whitespace-pre-wrap">
+                        <!-- Generated quiz questions will appear here -->
+                    </div>
                 </div>
 
                 <!-- שלבי בדיקה, הערכה והגשה לאישור -->
@@ -198,7 +239,7 @@
                     <p>במרחב ההתנסות (סרגל ירוק מימין), ניתן לגשת למרחב הלמידה, ללחוץ על "איפוס מרחב הלמידה" בפינה השמאלית העליונה, ולחזור ולהקים אותו מחדש כדי לתרגל.</p>
                 </div>
 
-                <!-- New Help Tab Content -->
+                <!-- Help Tab Content -->
                 <div id="help" class="tab-content">
                     <h2 class="text-xl sm:text-2xl font-semibold mb-4">קבלת עזרה</h2>
                     <p>אם אתה נתקל/ת בבעיה טכנית או שאלות בנוגע למשימה, תוכל/י לקבל עזרה:</p>
@@ -220,20 +261,129 @@
         document.addEventListener('DOMContentLoaded', () => {
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabContents = document.querySelectorAll('.tab-content');
+            const generateIdeasBtn = document.getElementById('generateIdeasBtn');
+            const subjectInput = document.getElementById('subjectInput');
+            const topicInput = document.getElementById('topicInput');
+            const ideaOutput = document.getElementById('ideaOutput');
 
+            const quizTopicInput = document.getElementById('quizTopicInput');
+            const questionTypeSelect = document.getElementById('questionTypeSelect');
+            const generateQuizBtn = document.getElementById('generateQuizBtn');
+            const quizOutput = document.getElementById('quizOutput');
+
+
+            // Tab switching logic
             tabButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Remove active class from all buttons and contents
                     tabButtons.forEach(btn => btn.classList.remove('active'));
                     tabContents.forEach(content => content.classList.remove('active'));
-
-                    // Add active class to the clicked button
                     button.classList.add('active');
-
-                    // Show the corresponding content
                     const targetTabId = button.dataset.tab;
                     document.getElementById(targetTabId).classList.add('active');
                 });
+            });
+
+            // Gemini API integration for generating task ideas
+            generateIdeasBtn.addEventListener('click', async () => {
+                const subject = subjectInput.value.trim();
+                const topic = topicInput.value.trim();
+
+                if (!subject || !topic) {
+                    ideaOutput.innerHTML = '<p class="text-red-500">אנא הזינו גם מקצוע וגם תת-נושא.</p>';
+                    return;
+                }
+
+                ideaOutput.innerHTML = '<p class="text-blue-500">טוען רעיונות למשימות... ✨</p>';
+
+                const prompt = `הצע 3-5 רעיונות למשימות מתוקשבות בבגרות הגמישה עבור המקצוע "${subject}" בנושא "${topic}". כל רעיון צריך לכלול:
+1. שם המשימה
+2. תיאור קצר של המשימה
+3. מיומנויות המאה ה-21 שהמשימה מפתחת (לפחות 2-3 מיומנויות מתוך הרשימה: לומד עצמאי ואחראי ללמידה, מיומנויות חשיבה - פתרון בעיות, מיומנויות תקשורת ושיתוף פעולה, מיומנויות אוריינות מידע, מדיה ודיגיטלית, מיומנויות יצירתיות, חדשנות ויוזמה).
+4. כלי דיגיטלי מוצע לביצוע המשימה.
+פרמט את התשובה כרשימה ממוספרת של רעיונות.`;
+
+                try {
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        ideaOutput.innerHTML = `<h3 class="text-lg font-semibold mb-2">רעיונות למשימות:</h3><p>${text.replace(/\n/g, '<br>')}</p>`;
+                    } else {
+                        ideaOutput.innerHTML = '<p class="text-red-500">אירעה שגיאה בקבלת רעיונות. אנא נסו שוב.</p>';
+                        console.error('Unexpected API response structure:', result);
+                    }
+                } catch (error) {
+                    ideaOutput.innerHTML = '<p class="text-red-500">אירעה שגיאה: ' + error.message + '</p>';
+                    console.error('Error calling Gemini API:', error);
+                }
+            });
+
+            // Gemini API integration for generating quiz questions
+            generateQuizBtn.addEventListener('click', async () => {
+                const quizTopic = quizTopicInput.value.trim();
+                const questionType = questionTypeSelect.value;
+
+                if (!quizTopic) {
+                    quizOutput.innerHTML = '<p class="text-red-500">אנא הזינו נושא עבור השאלות.</p>';
+                    return;
+                }
+
+                quizOutput.innerHTML = '<p class="text-blue-500">טוען שאלות... ✨</p>';
+
+                let prompt = `צור 3 שאלות עבור נושא "${quizTopic}".`;
+
+                if (questionType === "multiple-choice") {
+                    prompt += ` כל שאלה צריכה להיות מסוג רב-ברירה (אמריקאית) עם 4 אפשרויות תשובה ואחת נכונה. סמן את התשובה הנכונה.`;
+                } else if (questionType === "open-ended") {
+                    prompt += ` כל שאלה צריכה להיות מסוג שאלה פתוחה.`;
+                } else if (questionType === "true-false") {
+                    prompt += ` כל שאלה צריכה להיות מסוג נכון/לא נכון.`;
+                }
+                prompt += ` פרמט את התשובה כרשימה ממוספרת של שאלות.`;
+
+
+                try {
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        quizOutput.innerHTML = `<h3 class="text-lg font-semibold mb-2">שאלות שנוצרו:</h3><p>${text.replace(/\n/g, '<br>')}</p>`;
+                    } else {
+                        quizOutput.innerHTML = '<p class="text-red-500">אירעה שגיאה בקבלת שאלות. אנא נסו שוב.</p>';
+                        console.error('Unexpected API response structure:', result);
+                    }
+                } catch (error) {
+                    quizOutput.innerHTML = '<p class="text-red-500">אירעה שגיאה: ' + error.message + '</p>';
+                    console.error('Error calling Gemini API:', error);
+                }
             });
         });
     </script>
