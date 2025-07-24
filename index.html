@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדריך למורה - הרב תחומי למדעים ולאמנויות עמל חדרה</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            direction: rtl; /* Right-to-left for Hebrew */
+            text-align: right; /* Align text to the right for Hebrew */
+        }
+        .tab-button {
+            padding: 0.75rem 1.25rem; /* Slightly reduced padding */
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #4a5568;
+            white-space: nowrap; /* Prevent wrapping within button text */
+            flex-shrink: 0; /* Prevent buttons from shrinking */
+            border-radius: 0.5rem 0.5rem 0 0;
+            margin-bottom: 0.5rem; /* Add margin between rows of tabs */
+            margin-right: 0.5rem; /* Changed to margin-right for LTR tab order */
+        }
+        .tab-button.active {
+            border-color: #3b82f6;
+            color: #3b82f6;
+            background-color: #e0f2fe;
+        }
+        .tab-content {
+            display: none;
+            padding: 1.5rem;
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .tab-content.active {
+            display: block;
+        }
+        h1, h2, h3 {
+            color: #2d3748;
+        }
+        p, ul, ol {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        ul, ol {
+            padding-right: 1.5rem; /* Indent lists for readability */
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        /* Responsive adjustments for tab container */
+        .tab-buttons-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow tabs to wrap to the next line */
+            justify-content: flex-start; /* Align tabs to the left for LTR tab order */
+            border-bottom: 1px solid #e2e8f0;
+            background-color: #f8fafc;
+            padding: 1rem; /* Add overall padding to the tab area */
+            border-radius: 0.5rem 0.5rem 0 0; /* Round top corners of the tab container */
+        }
+        .tab-buttons-container::-webkit-scrollbar {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .tab-button {
+                padding: 0.6rem 0.9rem; /* Further adjust padding for smaller screens */
+                font-size: 0.8rem;
+            }
+            .tab-content {
+                padding: 1rem;
+            }
+            .tab-buttons-container {
+                padding: 0.5rem; /* Reduce padding on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4 sm:p-6">
+
+    <!-- Header for the school name -->
+    <header class="w-full max-w-4xl bg-blue-700 text-white p-4 sm:p-6 rounded-lg shadow-md mb-6 text-center">
+        <h1 class="text-2xl sm:text-3xl font-bold">הרב תחומי למדעים ולאמנויות עמל חדרה</h1>
+        <p class="text-xl sm:text-2xl mt-2 text-white">מדריך למורה</p>
+    </header>
+
+    <main class="w-full max-w-4xl">
+        <!-- The main white card container -->
+        <div class="bg-white rounded-lg shadow-lg">
+            <!-- Tab Buttons Container -->
+            <div class="tab-buttons-container">
+                <button class="tab-button active" data-tab="intro">מבוא</button>
+                <button class="tab-button" data-tab="skills">מיומנויות הבגרות הגמישה</button>
+                <button class="tab-button" data-tab="digital-system">המערכת הדיגיטלית: התחברות מהירה</button>
+                <button class="tab-button" data-tab="create-task">יצירת משימה חדשה</button>
+                <button class="tab-button" data-tab="review-submit">בדיקה, הערכה והגשה</button>
+                <button class="tab-button" data-tab="update-reset">עדכון ואיפוס</button>
+                <button class="tab-button" data-tab="help">קבלת עזרה</button> <!-- New Help Tab Button -->
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="p-4 sm:p-6 overflow-hidden">
+                <!-- מבוא -->
+                <div id="intro" class="tab-content active">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-4">מדריך למורה: הבגרות הגמישה - מבוא, מיומנויות וכלים דיגיטליים</h2>
+                    <p>מדריך זה נועד לסייע למורים להבין ולהטמיע את תהליכי הבגרות הגמישה במקצועות ההומניסטיים בצורה יעילה ופשוטה. המדריך מפרט את המבנה החדש של הציון, את המיומנויות הנדרשות, ואת אופן השימוש במערכת הדיגיטלית הייעודית של משרד החינוך.</p>
+
+                    <h3 class="text-lg sm:text-xl font-semibold mt-6 mb-3">מהי הבגרות הגמישה?</h3>
+                    <p>הבגרות הגמישה היא מתווה חדש לחישוב ציון הבגרות במקצועות כמו היסטוריה, אזרחות, ספרות ותנ"ך. במקום בחינה חיצונית אחת שמהווה 70% מהציון, המתווה החדש מחלק את הציון לשלושה מרכיבים:</p>
+                    <ul class="list-disc pr-5">
+                        <li><strong>35% בחינה חיצונית:</strong> חלק זה מצומצם יותר מהמתווה הקודם, ומפחית את הלחץ וההסתמכות הבלעדית על בחינה אחת גדולה.</li>
+                        <li><strong>35% משימות מתוקשבות בדגש על מיומנויות:</strong> זהו החידוש המרכזי במתווה, ובו התלמידים מבצעים שתי משימות דיגיטליות הבוחנות מיומנויות ולא רק ידע.</li>
+                        <li><strong>30% הערכה פנימית (חלופית):</strong> חלק זה נשאר דומה למתווה הישן וכולל הערכה על ידי בית הספר.</li>
+                    </ul>
+                    <p class="mt-4"><strong>חשוב לדעת:</strong> בית הספר הוא זה שמחליט עבור כל אחד מהמקצועות האם לבחור במתווה הישן או במתווה החדש.</p>
+                </div>
+
+                <!-- מיומנויות הבגרות הגמישה -->
+                <div id="skills" class="tab-content">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-4">מיומנויות הבגרות הגמישה</h2>
+                    <p>המשימות המתוקשבות נועדו לפתח ולבחון מגוון רחב של מיומנויות המאה ה-21, מעבר לידע שצבר התלמיד. המיומנויות מחולקות לקטגוריות הבאות:</p>
+                    <ul class="list-disc pr-5">
+                        <li><strong>לומד עצמאי ואחראי ללמידה:</strong> קביעת יעדים אישיים, ניהול זמן ומשאבים ורפלקציה.</li>
+                        <li><strong>מיומנויות חשיבה - פתרון בעיות:</strong> חשיבה ביקורתית, ניתוח והסקת מסקנות, והצגת טיעון והצדקה.</li>
+                        <li><strong>מיומנויות תקשורת ושיתוף פעולה:</strong> תקשורת אפקטיבית בכתב ובעל-פה ועבודה בצוות.</li>
+                        <li><strong>מיומנויות אוריינות מידע, מדיה ודיגיטלית:</strong> איתור, הערכה וארגון מידע, שימוש מושכל בכלים דיגיטליים, ואתיקה דיגיטלית.</li>
+                        <li><strong>מיומנויות יצירתיות, חדשנות ויוזמה:</strong> חשיבה יצירתית ופיתוח רעיונות, ויוזמה ופרואקטיביות.</li>
+                    </ul>
+                </div>
+
+                <!-- המערכת הדיגיטלית: מדריך התחברות מהירה -->
+                <div id="digital-system" class="tab-content">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-4">המערכת הדיגיטלית: מדריך התחברות מהיר</h2>
+                    <p>משרד החינוך פיתח מערכת דיגיטלית ייעודית, ידידותית וקלה לתפעול, המיועדת לנהל את תהליכי הבגרות החדשה.</p>
+                    <ul class="list-disc pr-5">
+                        <li><strong>גישה למערכת:</strong> חפשו בדפדפן "מרחב פדגוגי" + שם המקצוע (לדוגמה, "מרחב פדגוגי אזרחות"). ניתן גם להיכנס דרך הקישורים המפורטים למקצועות השונים.</li>
+                        <li><strong>כניסה:</strong> בחרו "כניסת מורה למשימות" והזינו את פרטי ההזדהות שלכם (שם משתמש וסיסמה).</li>
+                        <li><strong>שכחתם סיסמה?</strong> ניתן להתחבר באמצעות הודעת SMS.</li>
+                    </ul>
+                </div>
+
+                <!-- יצירת משימה חדשה בכמה צעדים -->
+                <div id="create-task" class="tab-content">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-4">יצירת משימה חדשה בכמה צעדים</h2>
+                    <p>לאחר ההתחברות, המערכת מאפשרת לכם להגדיר את המשימה לתלמידים:</p>
+                    <ol class="list-decimal pr-5">
+                        <li><strong>יצירת מרחב למידה:</strong> בחרו בתפריט הימני "מרחבי למידה". לאחר שרכז הבגרויות שיבץ את הכיתה, בחרו את הכיתה ולחצו "המשך".</li>
+                        <li><strong>אישור פרטים:</strong> אשרו את פרטי האשכול ולחצו "המשך".</li>
+                        <li><strong>בחירת סוג המשימה:</strong> בחרו את סוג המשימה הרצויה (אישית או צוותית).</li>
+                        <li><strong>שיוך תלמידים:</strong> בדקו שרשימת התלמידים תקינה, ושייכו תלמידים לצוותים על ידי גרירה (2-3 תלמידים בצוות).</li>
+                        <li><strong>הגדרת המשימה:</strong> בחרו תת-נושא מתוכנית הלימודים ותנו לעבודה שם. תוכן המשימה נקבע על ידי המורה. לאחר מכן, לחצו "המשך".</li>
+                        <li><strong>קביעת לוחות זמנים:</strong> הגדירו את תאריכי היעד לכל שלב במשימה. לאחר מכן, לחצו "סיים".</li>
+                    </ol>
+                </div>
+
+                <!-- שלבי בדיקה, הערכה והגשה לאישור -->
+                <div id="review-submit" class="tab-content">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-4">שלבי בדיקה, הערכה והגשה לאישור</h2>
+
+                    <h3 class="text-lg sm:text-xl font-semibold mt-6 mb-3">בדיקת משימות:</h3>
+                    <ol class="list-decimal pr-5">
+                        <li>התחברו למערכת.</li>
+                        <li>בחרו "מרחבי למידה" ופנו ללשונית "משוב והערכה".</li>
+                        <li>בחרו צוות לבדיקה.</li>
+                        <li>בחלק העליון, כתבו משוב מילולי וציון להערכה הצוותית.</li>
+                        <li>בחלק התחתון, כתבו משוב מילולי וציון עבור כל חבר צוות בנפרד.</li>
+                        <li>לחצו על "שמירה" כדי לשמור את הציונים.</li>
+                    </ol>
+
+                    <h3 class="text-lg sm:text-xl font-semibold mt-6 mb-3">פרסום ציונים:</h3>
+                    <ul class="list-disc pr-5">
+                        <li>בלשונית "משוב והערכה", מעל רשימת הצוותים, ישנם כפתורים לפרסום הציונים.</li>
+                        <li>פרסמו את הציונים כדי שהתלמידים יוכלו לראות אותם.</li>
+                    </ul>
+
+                    <h3 class="text-lg sm:text-xl font-semibold mt-6 mb-3">הגשה לאישור המנהל:</h3>
+                    <ul class="list-disc pr-5">
+                        <li>בחרו ב"מרחבי למידה" את המרחב שרוצים להעביר למנהל.</li>
+                        <li>סמנו את הצוותים המוגשים לבגרות.</li>
+                        <li>לחצו "לשיחת ציונים" כדי להעביר את הבקשה למנהל. המנהל יוכל להסיר תלמידים שהוגשו אך לא להוסיף תלמידים שלא הוגשו על ידי המורה.</li>
+                    </ul>
+                </div>
+
+                <!-- עדכון לוחות זמנים ואיפוס מרחב -->
+                <div id="update-reset" class="tab-content">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-4">עדכון לוחות זמנים ואיפוס מרחב</h2>
+
+                    <h3 class="text-lg sm:text-xl font-semibold mt-6 mb-3">עדכון לוחות זמנים:</h3>
+                    <p>התחברו למערכת, בחרו את המשימה שברצונכם לשנות. לחצו על לשונית "לוח זמנים", על סמל העיפרון ("עריכה") ועדכנו את המועדים. לבסוף, לחצו על "שמירת שינויים" ואשרו.</p>
+
+                    <h3 class="text-lg sm:text-xl font-semibold mt-6 mb-3">איפוס מרחב התנסות:</h3>
+                    <p>במרחב ההתנסות (סרגל ירוק מימין), ניתן לגשת למרחב הלמידה, ללחוץ על "איפוס מרחב הלמידה" בפינה השמאלית העליונה, ולחזור ולהקים אותו מחדש כדי לתרגל.</p>
+                </div>
+
+                <!-- New Help Tab Content -->
+                <div id="help" class="tab-content">
+                    <h2 class="text-xl sm:text-2xl font-semibold mb-4">קבלת עזרה</h2>
+                    <p>אם אתה נתקל/ת בבעיה טכנית או שאלות בנוגע למשימה, תוכל/י לקבל עזרה:</p>
+                    <ul class="list-disc pr-5">
+                        <li><strong>רכזת טכנו-פדגוגיה בית ספרית:</strong> מריאלה שטיין <a href="tel:0508456642" class="text-blue-600 hover:underline">050-8456642</a></li>
+                        <li><strong>מוקד תמיכה ארצי:</strong> מוקד שירות זמין למענה טלפוני.
+                            <ul class="list-circle pr-5 mt-1">
+                                <li>טלפון: <a href="tel:6552" class="text-blue-600 hover:underline">6552*</a> או <a href="tel:0733983960" class="text-blue-600 hover:underline">073-3983960</a>, שלוחה 9.</li>
+                                <li>שעות פעילות: ימים א'-ה' בין 7:30-18:00 וביום ו' בין 8:00-14:30.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to the clicked button
+                    button.classList.add('active');
+
+                    // Show the corresponding content
+                    const targetTabId = button.dataset.tab;
+                    document.getElementById(targetTabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
