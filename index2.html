@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדריך למורה: הבגרות הגמישה</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for Inter font and general body */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; /* Light gray background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* Style for active tab button */
+        .tab-button.active {
+            background-color: #1e40af; /* Darker blue for active tab */
+            color: white;
+            font-weight: bold;
+        }
+        /* Style for tab content */
+        .tab-content {
+            display: none;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 1rem;
+        }
+        /* Display active tab content */
+        .tab-content.active {
+            display: block;
+        }
+        /* General styling for headings within content */
+        .tab-content h2 {
+            font-size: 1.75rem; /* text-3xl */
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1a202c; /* Dark gray */
+        }
+        .tab-content h3 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            color: #2d3748; /* Medium dark gray */
+        }
+        .tab-content ul {
+            list-style-type: disc;
+            margin-right: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .tab-content ol {
+            list-style-type: decimal;
+            margin-right: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .tab-content li {
+            margin-bottom: 0.5rem;
+        }
+        .tab-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body class="font-inter">
+    <!-- Blue Banner Section -->
+    <header class="bg-blue-800 text-white p-4 text-center rounded-b-lg shadow-lg">
+        <h1 class="text-2xl sm:text-3xl font-bold mb-1">הרב תחומי למדעים ולאמנויות עמל חדרה</h1>
+        <h2 class="text-xl sm:text-2xl">מדריך למורה: הבגרות הגמישה</h2>
+    </header>
+
+    <main class="container mx-auto p-4 flex-grow">
+        <!-- Tab Buttons Container -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-4" id="tab-buttons">
+            <button class="tab-button bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full shadow-md transition duration-300 active" data-tab="what-is-flexible-bagrut">מהי הבגרות הגמישה?</button>
+            <button class="tab-button bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full shadow-md transition duration-300" data-tab="skills">מיומנויות הבגרות הגמישה</button>
+            <button class="tab-button bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full shadow-md transition duration-300" data-tab="digital-system">המערכת הדיגיטלית</button>
+            <button class="tab-button bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full shadow-md transition duration-300" data-tab="evaluation-submission">בדיקה והגשה</button>
+            <button class="tab-button bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full shadow-md transition duration-300" data-tab="update-reset">עדכון ואיפוס</button>
+            <button class="tab-button bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full shadow-md transition duration-300" data-tab="get-help">קבלת עזרה</button>
+            <button class="tab-button bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full shadow-md transition duration-300" data-tab="task-types">סוגי משימות</button>
+        </div>
+
+        <!-- Tab Content Sections -->
+        <div id="tab-contents">
+            <!-- What is Flexible Bagrut Tab -->
+            <div id="what-is-flexible-bagrut" class="tab-content active">
+                <h2 class="text-3xl font-bold mb-4">מהי הבגרות הגמישה?</h2>
+                <p>הבגרות הגמישה היא מתווה חדש לחישוב ציון הבגרות במקצועות כמו היסטוריה, אזרחות, ספרות ותנ"ך. במקום בחינה חיצונית אחת שמהווה 70% מהציון, המתווה החדש מחלק את הציון לשלושה מרכיבים:</p>
+                <ul class="list-disc pr-5 mb-4">
+                    <li><strong class="text-blue-700">35% בחינה חיצונית:</strong> חלק זה מצומצם יותר מהמתווה הקודם, ומפחית את הלחץ וההסתמכות הבלעדית על בחינה אחת גדולה.</li>
+                    <li><strong class="text-blue-700">35% משימות מתוקשבות בדגש על מיומנויות:</strong> זהו החידוש המרכזי במתווה, ובו התלמידים מבצעים שתי משימות דיגיטליות הבוחנות מיומנויות ולא רק ידע.</li>
+                    <li><strong class="text-blue-700">30% הערכה פנימית (חלופית):</strong> חלק זה נשאר דומה למתווה הישן וכולל הערכה על ידי בית הספר.</li>
+                </ul>
+                <p><strong class="text-red-600">חשוב לדעת:</strong> בית הספר הוא זה שמחליט עבור כל אחד מהמקצועות האם לבחור במתווה הישן או במתווה החדש.</p>
+            </div>
+
+            <!-- Skills Tab -->
+            <div id="skills" class="tab-content">
+                <h2 class="text-3xl font-bold mb-4">מיומנויות הבגרות הגמישה</h2>
+                <p>המשימות המתוקשבות נועדו לפתח ולבחון מגוון רחב של מיומנויות המאה ה-21, מעבר לידע שצבר התלמיד. המיומנויות מחולקות לקטגוריות הבאות:</p>
+                <ul class="list-disc pr-5 mb-4">
+                    <li><strong class="text-blue-700">לומד עצמאי ואחראי ללמידה:</strong> קביעת יעדים אישיים, ניהול זמן ומשאבים ורפלקציה.</li>
+                    <li><strong class="text-blue-700">מיומנויות חשיבה - פתרון בעיות:</strong> חשיבה ביקורתית, ניתוח והסקת מסקנות, והצגת טיעון והצדקה.</li>
+                    <li><strong class="text-blue-700">מיומנויות תקשורת ושיתוף פעולה:</strong> תקשורת אפקטיבית בכתב ובעל-פה ועבודה בצוות.</li>
+                    <li><strong class="text-blue-700">מיומנויות אוריינות מידע, מדיה ודיגיטלית:</strong> איתור, הערכה וארגון מידע, שימוש מושכל בכלים דיגיטליים, ואתיקה דיגיטלית.</li>
+                    <li><strong class="text-blue-700">מיומנויות יצירתיות, חדשנות ויוזמה:</strong> חשיבה יצירתית ופיתוח רעיונות, ויוזמה ופרואקטיביות.</li>
+                </ul>
+            </div>
+
+            <!-- Digital System Tab -->
+            <div id="digital-system" class="tab-content">
+                <h2 class="text-3xl font-bold mb-4">המערכת הדיגיטלית: מדריך התחברות מהיר</h2>
+                <p>משרד החינוך פיתח מערכת דיגיטלית ייעודית, ידידותית וקלה לתפעול, המיועדת לנהל את תהליכי הבגרות החדשה.</p>
+                <ol class="list-decimal pr-5 mb-4">
+                    <li><strong class="text-blue-700">גישה למערכת:</strong> חפשו בדפדפן "מרחב פדגוגי" + שם המקצוע (לדוגמה, "מרחב פדגוגי אזרחות"). ניתן גם להיכנס דרך הקישורים המפורטים למקצועות השונים.</li>
+                    <li><strong class="text-blue-700">כניסה:</strong> בחרו "כניסת מורה למשימות" והזינו את פרטי ההזדהות שלכם (שם משתמש וסיסמה).
+                        <ul class="list-disc pr-5 mt-2">
+                            <li><strong class="text-red-600">שכחתם סיסמה?</strong> ניתן להתחבר באמצעות הודעת SMS.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3 class="text-2xl font-bold mb-3">יצירת משימה חדשה בכמה צעדים</h3>
+                <p>לאחר ההתחברות, המערכת מאפשרת לכם להגדיר את המשימה לתלמידים.</p>
+                <ol class="list-decimal pr-5 mb-4">
+                    <li><strong class="text-blue-700">יצירת מרחב למידה:</strong> בחרו בתפריט הימני "מרחבי למידה". לאחר שרכז הבגרויות שיבץ את הכיתה, בחרו את הכיתה ולחצו "המשך".</li>
+                    <li><strong class="text-blue-700">אישור פרטים:</strong> אשרו את פרטי האשכול ולחצו "המשך".</li>
+                    <li><strong class="text-blue-700">בחירת סוג המשימה:</strong> בחרו את סוג המשימה הרצויה (אישית או צוותית).</li>
+                    <li><strong class="text-blue-700">שיוך תלמידים:</strong> בדקו שרשימת התלמידים תקינה, ושייכו תלמידים לצוותים על ידי גרירה (2-3 תלמידים בצוות).</li>
+                    <li><strong class="text-blue-700">הגדרת המשימה:</strong> בחרו תת-נושא מתוכנית הלימודים ותנו לעבודה שם. תוכן המשימה נקבע על ידי המורה. לאחר מכן, לחצו "המשך".</li>
+                    <li><strong class="text-blue-700">קביעת לוחות זמנים:</strong> הגדירו את תאריכי היעד לכל שלב במשימה. לאחר מכן, לחצו "סיים".</li>
+                </ol>
+            </div>
+
+            <!-- Evaluation and Submission Tab -->
+            <div id="evaluation-submission" class="tab-content">
+                <h2 class="text-3xl font-bold mb-4">שלבי בדיקה, הערכה והגשה לאישור</h2>
+
+                <h3 class="text-2xl font-bold mb-3">בדיקת משימות:</h3>
+                <ol class="list-decimal pr-5 mb-4">
+                    <li>התחברו למערכת.</li>
+                    <li>בחרו "מרחבי למידה" ופנו ללשונית "משוב והערכה".</li>
+                    <li>בחרו צוות לבדיקה.</li>
+                    <li>בחלק העליון, כתבו משוב מילולי וציון להערכה הצוותית.</li>
+                    <li>בחלק התחתון, כתבו משוב מילולי וציון עבור כל חבר צוות בנפרד.</li>
+                    <li>לחצו על "שמירה" כדי לשמור את הציונים.</li>
+                </ol>
+
+                <h3 class="text-2xl font-bold mb-3">פרסום ציונים:</h3>
+                <ul class="list-disc pr-5 mb-4">
+                    <li>בלשונית "משוב והערכה", מעל רשימת הצוותים, ישנם כפתורים לפרסום הציונים.</li>
+                    <li>פרסמו את הציונים כדי שהתלמידים יוכלו לראות אותם.</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mb-3">הגשה לאישור המנהל:</h3>
+                <ol class="list-decimal pr-5 mb-4">
+                    <li>בחרו ב"מרחבי למידה" את המרחב שרוצים להעביר למנהל.</li>
+                    <li>סמנו את הצוותים המוגשים לבגרות.</li>
+                    <li>לחצו "לשיחת ציונים" כדי להעביר את הבקשה למנהל. המנהל יוכל להסיר תלמידים שהוגשו אך לא להוסיף תלמידים שלא הוגשו על ידי המורה.</li>
+                </ol>
+            </div>
+
+            <!-- Update and Reset Tab -->
+            <div id="update-reset" class="tab-content">
+                <h2 class="text-3xl font-bold mb-4">עדכון לוחות זמנים ואיפוס מרחב</h2>
+
+                <h3 class="text-2xl font-bold mb-3">עדכון לוחות זמנים:</h3>
+                <ol class="list-decimal pr-5 mb-4">
+                    <li>התחברו למערכת, בחרו את המשימה שברצונכם לשנות.</li>
+                    <li>לחצו על לשונית "לוח זמנים", על סמל העיפרון ("עריכה") ועדכנו את המועדים.</li>
+                    <li>לבסוף, לחצו על "שמירת שינויים" ואשרו.</li>
+                </ol>
+
+                <h3 class="text-2xl font-bold mb-3">איפוס מרחב התנסות:</h3>
+                <ul class="list-disc pr-5 mb-4">
+                    <li>במרחב ההתנסות (סרגל ירוק מימין), ניתן לגשת למרחב הלמידה, ללחוץ על "איפוס מרחב הלמידה" בפינה השמאלית העליונה, ולחזור ולהקים אותו מחדש כדי לתרגל.</li>
+                </ul>
+            </div>
+
+            <!-- Get Help Tab -->
+            <div id="get-help" class="tab-content">
+                <h2 class="text-3xl font-bold mb-4">קבלת עזרה</h2>
+                <p>אם אתה נתקל/ת בבעיה טכנית או שאלות בנוגע למשימה, תוכל/י לקבל עזרה:</p>
+                <ul class="list-disc pr-5 mb-4">
+                    <li><strong class="text-blue-700">יצירת קשר עם רכז טכנו-פדגוגיה:</strong> מריאלה שטיין 050-8456642</li>
+                    <li><strong class="text-blue-700">הודעות למורה:</strong> בפינה השמאלית העליונה של המערכת תראה/י אייקון של בועת דיבור, המיועד להודעות אישיות מהתלמידים למורה.</li>
+                    <li><strong class="text-blue-700">הודעות מערכת:</strong> אייקון הפעמון מיועד להודעות מערכת.</li>
+                    <li><strong class="text-blue-700">מוקד תמיכה ארצי:</strong> מוקד שירות זמין למענה טלפוני.
+                        <ul class="list-disc pr-5 mt-2">
+                            <li><strong class="text-blue-700">טלפון:</strong> 6552* או 073-3983960, שלוחה 9.</li>
+                            <li><strong class="text-blue-700">שעות פעילות:</strong> ימים א'-ה' בין 7:30-18:00 וביום ו' בין 8:00-14:30.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Task Types Tab -->
+            <div id="task-types" class="tab-content">
+                <h2 class="text-3xl font-bold mb-4">סוגי משימות: מיומנויות ותהליכי עבודה</h2>
+                <p>בלשונית זו, נציג פירוט של מגוון המשימות שתוכלו לבצע, עם דגש על המיומנויות שתפתחו בכל אחת מהן ושלבי העבודה המרכזיים. הבחירה במשימה המתאימה תאפשר לכם להעמיק בנושא הנלמד תוך פיתוח יכולות חשובות לעתיד.</p>
+
+                <!-- 1. נייר עמדה - משימת צוות -->
+                <h3 class="text-2xl font-bold mb-3">1. נייר עמדה - משימת צוות</h3>
+                <p>משימה זו נועדה לפתח את יכולתכם לחקור נושא לעומק, לנתח נקודות מבט שונות ולהגיע להסכמה קבוצתית.</p>
+                <h4 class="text-xl font-bold mb-2 text-blue-700">מיומנויות שתשפרו:</h4>
+                <ul class="list-disc pr-5 mb-4">
+                    <li><strong>חשיבה ביקורתית:</strong> ניתוח עמדות שונות, זיהוי טיעונים חזקים וחלשים.</li>
+                    <li><strong>מודעות חברתית - עבודת צוות:</strong> שיתוף פעולה, הקשבה הדדית והגעה לפשרה.</li>
+                    <li><strong>אוריינות לשונית:</strong> ניסוח ברור, ארגון רעיונות בכתב והבעת עמדה מנומקת.</li>
+                    <li><strong>אוריינות מידע והערכה:</strong> איסוף מידע ממקורות מגוונים והערכת מהימנותם.</li>
+                </ul>
+                <h4 class="text-xl font-bold mb-2 text-blue-700">תהליך העבודה:</h4>
+                <ol class="list-decimal pr-5 mb-4">
+                    <li><strong>בחירת נושא/סוגיה/דילמה:</strong> בחרו נושא הקשור לחומר הנלמד, שיש בו פוטנציאל לנקודות מבט שונות.</li>
+                    <li><strong>חקירה וניתוח:</strong> חקרו את הנושא לעומק, אספו מידע ונתחו עמדות בעד ונגד או פרשנויות שונות.</li>
+                    <li><strong>דיון וגיבוש פשרה:</strong> שתפו פעולה עם חברי הצוות, קיימו דיון פתוח והגיעו לפשרה מוסכמת שתשקף את עמדת הצוות.</li>
+                    <li><strong>משוב אישי (רפלקציה):</strong> כתבו משוב אישי שיציין את התובנות שלכם מהתהליך, כולל מה למדתם על הנושא ועל עבודת צוות.</li>
+                </ol>
+
+                <!-- 2. עיתון שיתופי - משימה צוותית -->
+                <h3 class="text-2xl font-bold mb-3">2. עיתון שיתופי - משימה צוותית</h3>
+                <p>פרויקט יצירתי המשלב כתיבה, מחקר ועבודת צוות, ומאפשר לכם להציג נושאים מתוכנית הלימודים בפורמט מעניין.</p>
+                <h4 class="text-xl font-bold mb-2 text-blue-700">מיומנויות שתשפרו:</h4>
+                <ul class="list-disc pr-5 mb-4">
+                    <li><strong>אוריינות לשונית:</strong> כתיבה בסגנונות שונים (חדשות, דעה, ראיון), עריכה לשונית.</li>
+                    <li><strong>חשיבה ביקורתית:</strong> בחירת נושאים, ניתוח אירועים וגיבוש עמדות אישיות ומשותפות.</li>
+                    <li><strong>מודעות חברתית - עבודת צוות:</strong> חלוקת תפקידים, תיאום בין כותבים שונים וגיבוש תוצר משותף.</li>
+                </ul>
+                <h4 class="text-xl font-bold mb-2 text-blue-700">תהליך העבודה:</h4>
+                <ol class="list-decimal pr-5 mb-4">
+                    <li><strong>בחירת נושא העיתון:</strong> בחרו נושא מרכזי לכל העיתון מתוך תוכנית הלימודים.</li>
+                    <li><strong>כתיבת כתבה מרכזית משותפת:</strong> כתבה שתציג את הנושא המרכזי של העיתון ותשקף עבודה משותפת.</li>
+                    <li><strong>כתיבת כתבת משנה אישית:</strong> כל חבר צוות יכתוב כתבת משנה אישית (טור דעה, ראיון, יומן מסע, מכתב למערכת, מדור וכו') הקשורה לנושא המרכזי.</li>
+                    <li><strong>"דבר העורכים" משותף:</strong> סכמו את העבודה והציגו תובנה משותפת שעולה מהעיתון כולו.</li>
+                    <li><strong>משוב אישי (רפלקציה):</strong> כתבו משוב אישי על המשימה, התובנות שלכם ועל תהליך הלמידה.</li>
+                </ol>
+
+                <!-- 3. הסכת (פודקאסט) - משימת צוות/אישית -->
+                <h3 class="text-2xl font-bold mb-3">3. הסכת (פודקאסט) - משימת צוות/אישית</h3>
+                <p>משימה חדשנית ויצירתית המאפשרת לכם לחקור נושא, לפתח עמדה ולהציג אותה בפורמט אודיו מרתק, בליווי דף אינטרנט.</p>
+                <h4 class="text-xl font-bold mb-2 text-blue-700">מיומנויות שתשפרו:</h4>
+                <ul class="list-disc pr-5 mb-4">
+                    <li><strong>אוריינות לשונית:</strong> ניסוח בהיר, כתיבת תסריט, הקשבה ודיבור שוטף.</li>
+                    <li><strong>חשיבה ביקורתית:</strong> ניתוח סוגיות, גיבוש עמדות והצגתן בצורה משכנעת.</li>
+                    <li><strong>חשיבה יצירתית:</strong> פיתוח רעיונות מקוריים לתוכן ההסכת והצגתו.</li>
+                    <li><strong>אוריינות דיגיטלית:</strong> שימוש בכלים דיגיטליים ליצירה ועריכת אודיו, בניית דף אינטרנט.</li>
+                </ul>
+                <h4 class="text-xl font-bold mb-2 text-blue-700">תהליך העבודה:</h4>
+                <ol class="list-decimal pr-5 mb-4">
+                    <li><strong>יצירת דף אינטרנט:</strong> בנו דף אינטרנט שישמש כבסיס להצגת ההסכת.</li>
+                    <li><strong>בחירת נושא/סוגיה/דילמה (שיתופי):</strong> בחרו נושא מעניין שישמש כפרק אחד מסדרת הסכתים.</li>
+                    <li><strong>פרשנות/עמדה/תובנה (אישי):</strong> כל משתתף יציג את הפרשנות/עמדה/תובנה האישית שלו בנושא.</li>
+                    <li><strong>מקטעים (שיתופי):</strong> חלקו את ההסכת למקטעים וצרו תוכן משותף.</li>
+                    <li><strong>הסכת (שיתופי):</strong> הקליטו ועצבו את ההסכת עצמו, וודאו זרימה וחיבור בין החלקים.</li>
+                    <li><strong>משוב אישי (רפלקציה):</strong> כתבו משוב אישי על תהליך יצירת ההסכת, האתגרים והתובנות שלכם.</li>
+                </ol>
+
+                <!-- 4. עיתון אישי - משימה אישית -->
+                <h3 class="text-2xl font-bold mb-3">4. עיתון אישי - משימה אישית</h3>
+                <p>משימה אישית המעודדת ביטוי עצמי, חקירה מעמיקה של נושאים וכתיבה עיתונאית בסגנונות שונים.</p>
+                <h4 class="text-xl font-bold mb-2 text-blue-700">מיומנויות שתשפרו:</h4>
+                <ul class="list-disc pr-5 mb-4">
+                    <li><strong>אוריינות לשונית:</strong> כתיבה חדשותית, דעה אישית, עריכה לשונית.</li>
+                    <li><strong>אוריינות מידע והערכה:</strong> איסוף מידע, סינון והערכה של מקורות.</li>
+                    <li><strong>חשיבה ביקורתית:</strong> בחירת נושאים, ניתוחם וגיבוש עמדה אישית.</li>
+                    <li><strong>הכוונה עצמית:</strong> ניהול זמן, תכנון משימה וביצוע עצמאי.</li>
+                </ul>
+                <h4 class="text-xl font-bold mb-2 text-blue-700">תהליך העבודה:</h4>
+                <ol class="list-decimal pr-5 mb-4">
+                    <li><strong>כתבה חדשותית מרכזית:</strong> כתבו כתבה שתציג נושא חדשותי מרכזי, בהתבסס על מחקר.</li>
+                    <li><strong>כתבת משנה:</strong> הוסיפו כתבת משנה בסגנון שונה (לדוגמה: טור דעה, ריאיון קצר, סיפור אישי).</li>
+                    <li><strong>"דבר העורך":</strong> כתבו "דבר העורך" אישי, שבו תציגו את עמדתכם ותובנותיכם מהעבודה.</li>
+                    <li><strong>משוב אישי (רפלקציה):</strong> סכמו את חווית הלמידה, האתגרים והתובנות האישיות שלכם מהמשימה.</li>
+                </ol>
+
+                <!-- 5. פרזנטציה - משימה אישית -->
+                <h3 class="text-2xl font-bold mb-3">5. פרזנטציה - משימה אישית</h3>
+                <p>הזדמנות להציג נושא בפני קהל, לשפר את יכולות התקשורת וההצגה שלכם תוך שימוש בכלים דיגיטליים.</p>
+                <h4 class="text-xl font-bold mb-2 text-blue-700">מיומנויות שתשפרו:</h4>
+                <ul class="list-disc pr-5 mb-4">
+                    <li><strong>אוריינות לשונית:</strong> ניסוח ברור ורהוט, דיבור בפני קהל, התאמת השפה לנושא ולקהל.</li>
+                    <li><strong>אוריינות יצירתית:</strong> תכנון מצגת אסתטית ומרתקת.</li>
+                    <li><strong>חשיבה דיגיטלית:</strong> שימוש יעיל בתוכנות מצגות וכלים דיגיטליים נוספים.</li>
+                    <li><strong>הכוונה עצמית:</strong> תכנון מפורט של המצגת, חלוקת זמנים ותרגול.</li>
+                </ul>
+                <h4 class="text-xl font-bold mb-2 text-blue-700">תהליך העבודה:</h4>
+                <ol class="list-decimal pr-5 mb-4">
+                    <li><strong>הצגת נושא/סוגיה/דילמה:</strong> בחרו נושא מעניין ורלוונטי שתרצו להציג.</li>
+                    <li><strong>פירוט תכנון השקפים:</strong> תכננו בקפידה את מבנה המצגת ואת תוכן כל שקף.</li>
+                    <li><strong>הכנת המצגת:</strong> בנו את המצגת בפועל, תוך שימוש בעיצוב מושך, תמונות, גרפים וכדומה.</li>
+                    <li><strong>יום הפרזנטציה:</strong> הציגו את המצגת בפני הקהל.</li>
+                    <li><strong>משוב אישי (רפלקציה):</strong> כתבו על החוויה, מה למדתם על עצמכם ועל יכולות ההצגה שלכם.</li>
+                </ol>
+
+                <!-- 6. תוצר יצירתי - משימה אישית -->
+                <h3 class="text-2xl font-bold mb-3">6. תוצר יצירתי - משימה אישית</h3>
+                <p>משימה המאפשרת לכם לבטא הבנה מעמיקה של נושא דרך יצירה אמנותית, תוך שילוב מחקר ופרשנות אישית.</p>
+                <h4 class="text-xl font-bold mb-2 text-blue-700">מיומנויות שתשפרו:</h4>
+                <ul class="list-disc pr-5 mb-4">
+                    <li><strong>אוריינות לשונית:</strong> ניסוח הקשר בין היצירה לפרשנות.</li>
+                    <li><strong>חשיבה ביקורתית:</strong> ניתוח מקורות וגיבוש פרשנות אישית.</li>
+                    <li><strong>חשיבה יצירתית:</strong> פיתוח רעיון אמנותי מקורי וביצועו.</li>
+                    <li><strong>הכוונה עצמית:</strong> ניהול פרויקט אמנותי מתחילתו ועד סופו.</li>
+                </ul>
+                <h4 class="text-xl font-bold mb-2 text-blue-700">תהליך העבודה:</h4>
+                <ol class="list-decimal pr-5 mb-4">
+                    <li><strong>בחירת נושא/סוגיה/דילמה:</strong> בחרו נושא שמעניין אתכם ושיש לו פוטנציאל לביטוי אמנותי.</li>
+                    <li><strong>מחקר:</strong> חקרו את הנושא על בסיס שני מקורות לפחות, כדי להבין אותו לעומק.</li>
+                    <li><strong>פרשנות באמצעות תוצר אמנותי:</strong> צרו תוצר אמנותי (כרזה, פסל, קומיקס, ציור וכו') המבטא את הפרשנות האישית שלכם לנושא.</li>
+                    <li><strong>הצגת הקשר:</strong> הסבירו בכתב את הקשר בין הפרשנות לתוצר, וכיצד היא מתבטאת בבחירת הצבעים, החומרים ורכיבים נוספים.</li>
+                    <li><strong>משוב אישי (רפלקציה):</strong> כתבו משוב אישי על החוויה היצירתית, התובנות והלמידה שהתרחשו במהלך המשימה.</li>
+                </ol>
+
+                <!-- LLM Feature: Task Idea Generator -->
+                <div class="mt-8 p-4 bg-blue-50 rounded-lg shadow-inner">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-800">✨ מְחוֹלֵל רַעְיוֹנוֹת לְמַשִּׂימוֹת ✨</h3>
+                    <p class="mb-4">השתמשו בכלי זה כדי לקבל רעיונות יצירתיים למשימות בגרות גמישה, בהתבסס על סוג המשימה והנושא הכללי.</p>
+
+                    <div class="mb-4">
+                        <label for="taskTypeSelect" class="block text-gray-700 text-lg font-bold mb-2">בחרו סוג משימה:</label>
+                        <select id="taskTypeSelect" class="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <option value="נייר עמדה">נייר עמדה</option>
+                            <option value="עיתון שיתופי">עיתון שיתופי</option>
+                            <option value="הסכת (פודקאסט)">הסכת (פודקאסט)</option>
+                            <option value="עיתון אישי">עיתון אישי</option>
+                            <option value="פרזנטציה">פרזנטציה</option>
+                            <option value="תוצר יצירתי">תוצר יצירתי</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="taskTopicInput" class="block text-gray-700 text-lg font-bold mb-2">הזינו נושא כללי (לדוגמה: מלחמת העצמאות, זכויות אדם, קיימות):</label>
+                        <input type="text" id="taskTopicInput" class="block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="הזינו נושא כאן...">
+                    </div>
+
+                    <button id="generateTaskIdeasBtn" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                        ✨ צרו רעיונות למשימות ✨
+                    </button>
+
+                    <div id="loadingIndicator" class="mt-4 text-blue-600 font-semibold hidden">
+                        <svg class="animate-spin h-5 w-5 mr-3 inline-block" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        יוצר רעיונות...
+                    </div>
+
+                    <div id="taskIdeasOutput" class="mt-6 p-4 bg-white border border-gray-200 rounded-lg shadow-md whitespace-pre-wrap text-gray-800 leading-relaxed">
+                        <!-- Generated ideas will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // JavaScript for tab functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            // Function to show a specific tab
+            const showTab = (tabId) => {
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                // Deactivate all tab buttons
+                tabButtons.forEach(button => {
+                    button.classList.remove('active');
+                });
+
+                // Show the selected tab content
+                document.getElementById(tabId).classList.add('active');
+                // Activate the corresponding tab button
+                document.querySelector(`.tab-button[data-tab="${tabId}"]`).classList.add('active');
+            };
+
+            // Add click event listeners to all tab buttons
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.dataset.tab; // Get the tab ID from data-tab attribute
+                    showTab(tabId);
+                });
+            });
+
+            // Show the first tab by default on page load
+            if (tabButtons.length > 0) {
+                showTab(tabButtons[0].dataset.tab);
+            }
+
+            // LLM Feature Elements
+            const taskTypeSelect = document.getElementById('taskTypeSelect');
+            const taskTopicInput = document.getElementById('taskTopicInput');
+            const generateTaskIdeasBtn = document.getElementById('generateTaskIdeasBtn');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const taskIdeasOutput = document.getElementById('taskIdeasOutput');
+
+            generateTaskIdeasBtn.addEventListener('click', async () => {
+                const taskType = taskTypeSelect.value;
+                const topic = taskTopicInput.value.trim();
+
+                if (!topic) {
+                    taskIdeasOutput.innerHTML = '<p class="text-red-600">אנא הזינו נושא כללי לפני יצירת רעיונות.</p>';
+                    return;
+                }
+
+                // Show loading indicator
+                loadingIndicator.classList.remove('hidden');
+                taskIdeasOutput.innerHTML = ''; // Clear previous output
+
+                const prompt = `בהתבסס על סוג המשימה '${taskType}' והנושא הכללי '${topic}', אנא צור 3 רעיונות למשימות בגרות גמישה, תוך התייחסות למיומנויות המאה ה-21 הרלוונטיות. עבור כל רעיון, ספק כותרת, תיאור קצר, וציין 2-3 מיומנויות מרכזיות שהמשימה תפתח. פורמט את התשובה כרשימה ממוספרת של רעיונות.`;
+
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Canvas will automatically provide it in runtime
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        taskIdeasOutput.innerHTML = text.replace(/\n/g, '<br>'); // Display text, convert newlines to <br>
+                    } else {
+                        taskIdeasOutput.innerHTML = '<p class="text-red-600">אירעה שגיאה ביצירת הרעיונות. אנא נסו שוב.</p>';
+                        console.error('Unexpected API response structure:', result);
+                    }
+                } catch (error) {
+                    taskIdeasOutput.innerHTML = '<p class="text-red-600">שגיאת רשת או שרת. אנא בדקו את חיבור האינטרנט ונסו שוב.</p>';
+                    console.error('Error fetching from Gemini API:', error);
+                } finally {
+                    // Hide loading indicator
+                    loadingIndicator.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
